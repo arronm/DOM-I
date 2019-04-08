@@ -98,3 +98,7 @@ let startLink = document.createElement('a');
 startLink.href = '#';
 startLink.innerText = 'Start';
 document.querySelector('.container header nav').prepend(startLink);
+
+let style = document.createElement('style');
+style.appendChild(document.createTextNode(`body * { color: blue }`));
+document.head.appendChild(style);
