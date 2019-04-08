@@ -37,12 +37,21 @@ const siteContent = {
   },
 };
 
+// NOTE: This HTML is set up horribly. Could modify HTML slightly then just loop over the siteContent
+// to recursively populate site content...
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+// Navigation Links
 let navLinks = document.querySelectorAll('header nav a');
 navLinks.forEach((link, index) => {
   link.innerHTML = siteContent['nav'][`nav-item-${index + 1}`];
 });
 
+// CTA Section
+let cta = document.querySelector('.cta');
+cta.querySelector('h1').innerText = siteContent['cta']['h1'];
+cta.querySelector('button').innerText = siteContent['cta']['button'];
+cta.querySelector('#cta-img').setAttribute('src', siteContent['cta']['img-src']);
