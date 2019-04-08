@@ -37,8 +37,8 @@ const siteContent = {
   },
 };
 
-// NOTE: This HTML is set up horribly. Could modify HTML slightly then just loop over the siteContent
-// to recursively populate site content...
+// NOTE: This HTML structure could be improved. Could modify HTML and JSON slightly then just loop
+// over the siteContent to recursively populate the site...
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
@@ -55,3 +55,22 @@ let cta = document.querySelector('.cta');
 cta.querySelector('h1').innerText = siteContent['cta']['h1'];
 cta.querySelector('button').innerText = siteContent['cta']['button'];
 cta.querySelector('#cta-img').setAttribute('src', siteContent['cta']['img-src']);
+
+// Main Content Section
+let mainContent = document.querySelector('.main-content');
+
+let headers = mainContent.querySelectorAll('h4');
+headers[0].innerText = siteContent['main-content']['features-h4'];
+headers[1].innerText = siteContent['main-content']['about-h4'];
+headers[2].innerText = siteContent['main-content']['services-h4'];
+headers[3].innerText = siteContent['main-content']['product-h4'];
+headers[4].innerText = siteContent['main-content']['vision-h4'];
+
+let paragraphs = mainContent.querySelectorAll('p');
+paragraphs[0].innerText = siteContent['main-content']['features-content'];
+paragraphs[1].innerText = siteContent['main-content']['about-content'];
+paragraphs[2].innerText = siteContent['main-content']['services-content'];
+paragraphs[3].innerText = siteContent['main-content']['product-content'];
+paragraphs[4].innerText = siteContent['main-content']['vision-content'];
+
+mainContent.querySelector('#middle-img').setAttribute('src', siteContent['main-content']['middle-img-src']);
