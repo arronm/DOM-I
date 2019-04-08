@@ -74,3 +74,10 @@ paragraphs[3].innerText = siteContent['main-content']['product-content'];
 paragraphs[4].innerText = siteContent['main-content']['vision-content'];
 
 mainContent.querySelector('#middle-img').setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+// Contact Section
+let contact = document.querySelector('.contact');
+contact.querySelector('h4').innerText = siteContent['contact']['contact-h4'];
+contact.querySelectorAll('p').forEach((p, index) => {
+  p.innerText = Object.values(siteContent['contact'])[index + 1];
+});
