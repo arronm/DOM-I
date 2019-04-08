@@ -81,3 +81,6 @@ contact.querySelector('h4').innerText = siteContent['contact']['contact-h4'];
 contact.querySelectorAll('p').forEach((p, index) => {
   p.innerText = Object.values(siteContent['contact'])[index + 1];
 });
+
+// Footer
+document.querySelector('footer p').innerText = siteContent['footer']['copyright'];
