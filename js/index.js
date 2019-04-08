@@ -84,3 +84,17 @@ contact.querySelectorAll('p').forEach((p, index) => {
 
 // Footer
 document.querySelector('footer p').innerText = siteContent['footer']['copyright'];
+
+// Green Header
+document.querySelector('.container header').style.backgroundColor = 'green';
+
+// Append/Prepend Items to Navigation
+let endLink = document.createElement('a');
+endLink.href = '#';
+endLink.innerText = 'End';
+document.querySelector('.container header nav').appendChild(endLink);
+
+let startLink = document.createElement('a');
+startLink.href = '#';
+startLink.innerText = 'Start';
+document.querySelector('.container header nav').prepend(startLink);
