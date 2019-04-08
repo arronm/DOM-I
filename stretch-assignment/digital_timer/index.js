@@ -1,7 +1,7 @@
 const digits = document.querySelector('.digits');
 
-let counter = 0;
 const startTimer = () => {
+  let counter = 0;
   let timer = window.setInterval(() => {
     counter += 10;
     digits.querySelector('#secondTens').innerHTML = Math.floor(counter / 10000);
@@ -11,6 +11,7 @@ const startTimer = () => {
     if (counter === 10000) {
       digits.style.color = 'red';
       clearInterval(timer);
+      document.getElementById('reset-timer').disabled = false;
     }
   }, 10);
 };
@@ -20,3 +21,13 @@ document.addEventListener('click', (event) => {
   event.target.disabled = true;
   startTimer();
 });
+
+document.addEventListener('click', (event) => {
+  if (!event.target.matches('#reset-timer')) return;
+  digits.style.color = 'inherit';
+  digits.querySelectorAll('.digit:not(#colon)').forEach((digit) => {
+    digit.innerHTML = '-';
+  });
+  document.getElementById('start-timer').disabled = false;
+  document.getElementById('reset-timer').disabled = true;
+})
