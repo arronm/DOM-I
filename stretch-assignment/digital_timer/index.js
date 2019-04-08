@@ -17,5 +17,6 @@ const startTimer = () => {
 
 document.addEventListener('click', (event) => {
   if (!event.target.matches('#start-timer')) return;
+  event.target.disabled = true;
   startTimer();
 });
